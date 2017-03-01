@@ -17,7 +17,7 @@ public final class ArrayReader implements Reader
     private  List<String> arrayList;
     private String message = "";
 
-    public ArrayReader(List<String> arrayList) {
+public ArrayReader(List<String> arrayList) {
         setArrayList(arrayList);
     }
     

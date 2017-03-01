@@ -16,10 +16,15 @@ public class ConsoleWriter implements Writer{
      * this method write a message to console
      */
     @Override
-    public final void writer(String message) {
+    public final void doWrite(String message) {
         if (message == null || message.trim().length() == 0){
             throw new IllegalArgumentException("This is not valid message, Please check");            
         }
         System.out.println("Message :" + message);    
+    }
+
+    @Override
+    public String getMessage() {
+        return "";
     }
 }

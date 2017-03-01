@@ -6,6 +6,7 @@
 package dip.lab3.student.solution1;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -21,11 +22,15 @@ public class Startup {
         //instantiate new GUI writer
         Writer guiWriter = new GUIWriter();
         
+        Reader guiReader = new GUIReader();
+        
+        Writer arrayWriter = new ArrayWriter();
+        
         //instantiate new array list
-        ArrayList<String>  arrayList = new ArrayList();
+        List<String>  arrayList = new ArrayList();
         arrayList.add("Good Morning");
         arrayList.add("Good Evening");
-        arrayList.add("Happy Valentine to You all");
+        arrayList.add("Happy Valentine");
         arrayList.add("Merry X'Max");
         arrayList.add("Happy New Year");
         arrayList.add("Happy B'day !!!");
@@ -35,18 +40,19 @@ public class Startup {
         
         //instantiate message handler with array reader and gui writer
         MessageHandler messageHandler = new MessageHandler(arrayReader, guiWriter);
-        messageHandler.readWriteMessage();
+        messageHandler.readAndWriteMessage();
         
-        //instantiate message handler with array reader and console writer
-        MessageHandler messageHandler1 = new MessageHandler(arrayReader, consoleWriter);
-        messageHandler1.readWriteMessage();
-        
-        //instantiate message handler with keyboard reader and gui writer
-        MessageHandler messageHandler2 = new MessageHandler(keyboardReader, guiWriter);
-        messageHandler2.readWriteMessage();
-        
-        //instantiate message handler with keyboard reader and console writer
-        MessageHandler messageHandler3 = new MessageHandler(keyboardReader, consoleWriter);
-        messageHandler3.readWriteMessage();
+//        //instantiate message handler with array reader and console writer
+//        MessageHandler messageHandler1 = new MessageHandler(guiReader, consoleWriter);
+//        messageHandler1.readAndWriteMessage();
+//        
+//        //instantiate message handler with keyboard reader and gui writer
+//        MessageHandler messageHandler2 = new MessageHandler(keyboardReader, guiWriter);
+//        messageHandler2.readAndWriteMessage();
+//        
+//        //instantiate message handler with keyboard reader and console writer
+//        MessageHandler messageHandler3 = new MessageHandler(arrayReader, arrayWriter);
+//        messageHandler3.readAndWriteMessage();
+//        System.out.println("Message written to Array List :" + arrayWriter.getMessage());
     }    
 }

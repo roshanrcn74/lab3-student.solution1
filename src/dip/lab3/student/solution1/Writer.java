@@ -10,6 +10,7 @@ package dip.lab3.student.solution1;
  * @author roshann
  */
 public interface Writer {
-    public abstract void writer(String message);
+    public abstract void doWrite(String message);
+    public abstract String getMessage();
    
 }

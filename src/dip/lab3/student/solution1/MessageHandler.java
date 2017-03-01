@@ -28,11 +28,11 @@ public class MessageHandler {
     
     //out put the message of type of writer
     public void writeMessage(){
-        writeMessage.writer(readMessage.getMessage());
+        writeMessage.doWrite(readMessage.getMessage());
     }
     
     // first read the message from perticular readr and write message from relavent writer
-    public void readWriteMessage(){
+    public void readAndWriteMessage(){
         readMessage();
         writeMessage();
         
