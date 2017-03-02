@@ -15,7 +15,7 @@ import java.util.List;
 public class Startup {
     public static void main(String[] args) {
         //instantiate new keyboard reader 
-        //MessageReader keyboardReader = new KeyboardReader();
+        MessageReader keyboardReader = new KeyboardReader();
         //instantiate  console writer
         //MessageWriter consoleWriter = new ConsoleWriter();
         
@@ -36,10 +36,13 @@ public class Startup {
         arrayList.add("Happy B'day !!!");
      
         //instantiate new array reader 
-        ArrayReader arrayReader = new ArrayReader(arrayList);
+        //ArrayReader arrayReader = new ArrayReader(arrayList);
         
         //instantiate message handler with array reader and gui writer
-        MessageExchangeCenter messageHandler = new MessageExchangeCenter(arrayReader, guiWriter);
+        
+        MessageReader fileReader = new FileReader();
+        
+        MessageExchangeCenter messageHandler = new MessageExchangeCenter(fileReader, guiWriter);
         messageHandler.sendMessage();
         
 //        //instantiate message handler with array reader and console writer

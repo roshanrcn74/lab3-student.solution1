@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dip.lab3.student.solution1;
+package dip.lab3;
 
 /**
  *
  * @author roshann
  */
-public class FileWriter implements MessageWriter {
-
-    @Override
-    public void doWrite(String message) {
-        //not yet implemented
-    }
+public interface Reader {
+    public abstract String readMessage();
+    public abstract void setMessage(String message); 
+    public abstract String getMessage();
+    
 }

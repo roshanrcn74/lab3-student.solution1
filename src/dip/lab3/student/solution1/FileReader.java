@@ -6,6 +6,7 @@
 package dip.lab3.student.solution1;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -13,7 +14,6 @@ import java.util.Scanner;
  * @author roshann
  */
 public class FileReader implements MessageReader{
-    private String message;
 
     @Override
     public String readMessage() {
@@ -27,7 +27,19 @@ public class FileReader implements MessageReader{
     private String readFile(String filePath){
         String message = "";
         if(filePath != null && !filePath.isEmpty()){
-            File file = new File("filePath");
+            File file = new File(filePath);
+            try{
+                try (Scanner inputFile = new Scanner(file)) {
+                    while(inputFile.hasNext()){
+                        message += inputFile.nextLine() + "\n";
+                        
+                    }
+                    inputFile.close();
+                }
+            }
+            catch(IOException e){
+             e.getStackTrace();
+            }
             
         }
         return validateMessage(message);
@@ -35,6 +47,10 @@ public class FileReader implements MessageReader{
 
     @Override
     public String validateMessage(String message) {
+        if (message == null || message.isEmpty()){
+            throw new IllegalArgumentException("Null or empty message not accepted,"
+                    + "retry to valid message");
+        }
         return message;
     }   
 }

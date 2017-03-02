@@ -3,16 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dip.lab3.student.solution1;
+package dip.lab3;
+
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author roshann
  */
-public class FileWriter implements MessageWriter {
+public class GUIWriter implements Writer{
 
     @Override
-    public void doWrite(String message) {
-        //not yet implemented
+    public final void writer(String message) {
+        JOptionPane.showMessageDialog(null, message);
     }
 }
