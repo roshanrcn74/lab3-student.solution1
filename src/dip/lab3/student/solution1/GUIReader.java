@@ -11,31 +11,19 @@ import javax.swing.JOptionPane;
  *
  * @author roshann
  */
-public class GUIReader implements Reader{
-    private String message;
-
-    public GUIReader() {
-        this.message = "";
-    }
+public class GUIReader implements MessageReader{
     
     @Override
     public String readMessage() {
         String response = JOptionPane.showInputDialog(null, "Please enter message here : ");
-        return response;
+        return validateMessage(response);
     }
 
     @Override
-    public void setMessage(String message) {
+    public String validateMessage(String message) {
         if (message == null || message.trim().length() == 0 ){
             throw new IllegalArgumentException("Please enter valid message ");             
         }
-        this.message = message;
-        
+        return message;       
     }
-
-    @Override
-    public String getMessage() {
-        return this.message;
-    }
-    
 }

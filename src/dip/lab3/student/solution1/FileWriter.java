@@ -9,16 +9,10 @@ package dip.lab3.student.solution1;
  *
  * @author roshann
  */
-public class FileWriter implements Writer {
+public class FileWriter implements MessageWriter {
 
     @Override
     public void doWrite(String message) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public String getMessage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

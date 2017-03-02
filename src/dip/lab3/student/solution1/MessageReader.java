@@ -9,8 +9,8 @@ package dip.lab3.student.solution1;
  *
  * @author roshann
  */
-public interface Writer {
-    public abstract void doWrite(String message);
-    public abstract String getMessage();
-   
+public interface MessageReader {
+    public abstract String readMessage();
+    public abstract String validateMessage(String message); 
+    
 }

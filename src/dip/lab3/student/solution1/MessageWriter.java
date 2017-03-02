@@ -9,9 +9,7 @@ package dip.lab3.student.solution1;
  *
  * @author roshann
  */
-public interface Reader {
-    public abstract String readMessage();
-    public abstract void setMessage(String message); 
-    public abstract String getMessage();
-    
+public interface MessageWriter {
+    public abstract void doWrite(String message);
+   
 }

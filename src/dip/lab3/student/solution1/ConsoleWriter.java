@@ -10,7 +10,7 @@ package dip.lab3.student.solution1;
  * @author roshann
  * This class write message to console
  */
-public class ConsoleWriter implements Writer{   
+public class ConsoleWriter implements MessageWriter{   
     /**
      * @param message
      * this method write a message to console
@@ -23,8 +23,4 @@ public class ConsoleWriter implements Writer{
         System.out.println("Message :" + message);    
     }
 
-    @Override
-    public String getMessage() {
-        return "";
-    }
 }

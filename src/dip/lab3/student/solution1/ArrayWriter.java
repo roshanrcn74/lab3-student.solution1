@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author roshann
  */
-public class ArrayWriter implements Writer{
+public class ArrayWriter implements MessageWriter{
     private final List<String> arrayList;
 
     public ArrayWriter() {
@@ -25,15 +25,5 @@ public class ArrayWriter implements Writer{
             throw new IllegalArgumentException("This is not valid message");            
         }
         this.arrayList.add(message);       
-    }
-
-
-    @Override
-    public String getMessage() {
-        if(this.arrayList.isEmpty()){
-            return "empty list";
-        }
-        return this.arrayList.get(arrayList.size()-1);
-    }
-    
+    }   
 }

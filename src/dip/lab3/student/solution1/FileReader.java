@@ -12,35 +12,29 @@ import java.util.Scanner;
  *
  * @author roshann
  */
-public class FileReader implements Reader{
+public class FileReader implements MessageReader{
     private String message;
 
     @Override
     public String readMessage() {
         
         Scanner filePath = new Scanner(System.in);
-        System.out.print("Enter file path :" + readFile(filePath.nextLine()));
+        System.out.print("Enter file path :");
         
-        return this.message;
+        return readFile(filePath.nextLine());
     }
     
     private String readFile(String filePath){
         String message = "";
         if(filePath != null && !filePath.isEmpty()){
             File file = new File("filePath");
+            
         }
+        return validateMessage(message);
+    }
+
+    @Override
+    public String validateMessage(String message) {
         return message;
-    }
-
-    @Override
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    @Override
-    public String getMessage() {
-        
-        return this.message;
-    }
-    
+    }   
 }

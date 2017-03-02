@@ -11,32 +11,19 @@ import java.util.Scanner;
  * @author roshann
  * this class read the message from keyboard and store in message variable
  */
-public class KeyboardReader implements Reader {
-    
-    private String message;
-
-    public KeyboardReader() {
-        this.message = "";
-    }  
-    /**
-     * @return
-     *  this methods return the message
-     */
-    @Override
-    public final String getMessage() {
-       return this.message;
-    }
+public class KeyboardReader implements MessageReader {
 
     /**
      * @param message
      * this method set the message as per constrain
+     * @return 
      */
     @Override
-    public final void setMessage(String message) {
+    public final String validateMessage(String message) {
         if (message == null || message.trim().length() <= 0 ){
             throw new IllegalArgumentException("Empty message not accepted , Please key enter the message");
         }
-        this.message = message;  
+        return message;
     }
     /**
      * @return
@@ -46,8 +33,6 @@ public class KeyboardReader implements Reader {
     public final String readMessage() {
         Scanner inputMessage = new Scanner(System.in);
         System.out.print("Please enter the message :");  
-        return inputMessage.nextLine();
+        return validateMessage(inputMessage.nextLine());
     }
-
-
 }

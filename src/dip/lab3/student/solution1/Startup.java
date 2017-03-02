@@ -15,16 +15,16 @@ import java.util.List;
 public class Startup {
     public static void main(String[] args) {
         //instantiate new keyboard reader 
-        Reader keyboardReader = new KeyboardReader();
+        //MessageReader keyboardReader = new KeyboardReader();
         //instantiate  console writer
-        Writer consoleWriter = new ConsoleWriter();
+        //MessageWriter consoleWriter = new ConsoleWriter();
         
         //instantiate new GUI writer
-        Writer guiWriter = new GUIWriter();
+        MessageWriter guiWriter = new GUIWriter();
         
-        Reader guiReader = new GUIReader();
+        //MessageReader guiReader = new GUIReader();
         
-        Writer arrayWriter = new ArrayWriter();
+        //MessageWriter arrayWriter = new ArrayWriter();
         
         //instantiate new array list
         List<String>  arrayList = new ArrayList();
@@ -39,8 +39,8 @@ public class Startup {
         ArrayReader arrayReader = new ArrayReader(arrayList);
         
         //instantiate message handler with array reader and gui writer
-        MessageHandler messageHandler = new MessageHandler(arrayReader, guiWriter);
-        messageHandler.readAndWriteMessage();
+        MessageExchangeCenter messageHandler = new MessageExchangeCenter(arrayReader, guiWriter);
+        messageHandler.sendMessage();
         
 //        //instantiate message handler with array reader and console writer
 //        MessageHandler messageHandler1 = new MessageHandler(guiReader, consoleWriter);
